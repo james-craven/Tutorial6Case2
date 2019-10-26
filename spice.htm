@@ -23,7 +23,7 @@
       <script src="modernizr-1.5.js"></script>
       <script src="formsubmit.js"></script>
       <link href="sb.css" rel="stylesheet" type="text/css" />
-      <link href="payment.css" ref="stylesheet" type="text/css">
+      <link href="payment.css" rel="stylesheet" type="text/css">
 
    </head>
 
@@ -106,6 +106,7 @@
                   <label>
                         State
                         <select name="state" id="state" required="required">
+                            <option value="">**</option>
                             <option value="AL">AL</option>
                             <option value="AK">AK</option>
                             <option value="AR">AR</option>	
@@ -173,6 +174,7 @@
                   <label>
                         Phone
                         <input name="phone" required="required" id="phone" pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$">
+                  </label>
                   
             </fieldset>
             
@@ -182,22 +184,22 @@
 				  <fieldset id="optionGroup" class="optionGroup">
 				  
 					<label>
-						<input type="radio" name="ccard" value="diners">
+						<input type="radio" name="ccard" required="required" value="diners">
 						<img src="diners.png" />
 					</label>
 					
 					<label>
-						<input type="radio" name"ccard" value="discover">
+						<input type="radio" name="ccard" value="discover">
 						<img src="discover.png" />
 					</label>
 					
 					<label>
-						<input type="radio" name"ccard" value="master">
+						<input type="radio" name="ccard" value="master">
 						<img src="master.png" />
 					</label>
 					
 					<label>
-						<input type="radio" name"ccard" value="visa">
+						<input type="radio" name="ccard" value="visa">
 						<img src="visa.png" />
 					</label>
 					
@@ -205,13 +207,13 @@
 				  
 				  <label>
 					  Credit Card Number
-					  <input name="ccardnumber" pattern="^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$"
+					  <input name="ccardnumber" required="required" pattern="^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$">
                   </label>
 				  
 				  <label>
 						Expiration Date
-						<select name="ccardmonth">
-						<option>--Month--</option>
+						<select name="ccardmonth" required="required">
+						<option value="">--Month--</option>
 						<option value="January (01)">January (01)</option>
 						<option value="February (02)">February (02)</option>
 						<option value="March (03)">March (03)</option>
@@ -226,8 +228,8 @@
 						<option value="December (12)">December (12)</option>
 						</select>
 						
-						<select name="ccardyear">
-						<option>--Year--</option>
+						<select name="ccardyear" required="required">
+						<option value="">--Year--</option>
 						<option value="2014">2014</option>
 						<option value="2015">2015</option>
 						<option value="2016">2016</option>
@@ -238,7 +240,7 @@
 				  
 				  <label>
 						CSC
-						<input name="csc" pattern="^/d{3}$" maxlength="3" placeholder="nnn"/>
+						<input name="csc" required="required" pattern="^/d{3}$" maxlength="3" placeholder="nnn"/>
 				  </label>
                   
             </fieldset>
@@ -246,10 +248,21 @@
             <fieldset id="info">
                   <legend>Additional Information</legend>
                   
+                  <label>
+                        Contact Email
+                        <input name="email" type="email">
+                  </label>
+                  
+                  <label>
+                        Special Notes
+                        <textarea name="notes">
+                        </textarea>
+                  </label>
                   
                   
             </fieldset>
-                  
+            
+            <input type="submit" value="Submit Order">
             </form> 
          <footer>
             <address>The Spice Bowl &#183; 871 Park St. &#183; 
